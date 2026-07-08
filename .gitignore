@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+darwin_bridge/node_modules/
+
+# Environment — NEVER commit secrets
+.env
+.env.local
+*.env
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor
+.vscode/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*

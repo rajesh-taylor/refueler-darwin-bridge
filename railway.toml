@@ -1,0 +1,21 @@
+# REFUELER — Darwin Bridge deploy config for Railway.app
+# Docs: https://docs.railway.app/reference/config-as-code
+#
+# Required environment variables (set in Railway dashboard → Variables):
+#   DARWIN_USERNAME        — Network Rail datafeed username
+#   DARWIN_PASSWORD        — Network Rail datafeed password
+#   SUPABASE_WEBHOOK_URL   — Supabase Edge Function URL (darwin-webhook)
+#   SUPABASE_SERVICE_KEY   — Supabase service role key
+#
+# Deploy: connect this repo in Railway dashboard → New Project → Deploy from GitHub
+
+[build]
+builder = "NIXPACKS"
+
+[deploy]
+startCommand = "node darwin_bridge.js"
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+# Always-on: no sleep on free tier for Railway (unlike Render)
+# Healthcheck: Railway monitors process exit — bridge auto-restarts on crash

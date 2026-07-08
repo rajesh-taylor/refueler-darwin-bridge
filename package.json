@@ -1,0 +1,20 @@
+{
+  "name": "refueler-darwin-bridge",
+  "version": "1.0.0",
+  "description": "REFUELER — Darwin STOMP → Supabase webhook bridge for C2C real-time train movements",
+  "main": "darwin_bridge.js",
+  "scripts": {
+    "start": "node darwin_bridge.js",
+    "dev": "node --watch darwin_bridge.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "stompit": "^1.0.0"
+  },
+  "keywords": ["darwin", "stomp", "c2c", "refueler", "rail", "bitcoin"],
+  "license": "UNLICENSED",
+  "private": true
+}
